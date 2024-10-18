@@ -29,7 +29,7 @@ def process_csv_as_text(filepath):
             buff = line.lstrip(timestamp).lstrip(',')
         else:
             buff += line
-
+    yield index - 1, timestamp_to_datetime(timestamp), buff
 
 def main():
     processor = process_csv_as_text(sys.argv[1])
